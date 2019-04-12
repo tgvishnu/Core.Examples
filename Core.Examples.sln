@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "Depe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.Simple", "DI.Simple\DI.Simple.csproj", "{94C9017C-225C-4E32-820A-890CEF54DF97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.States", "DI.States\DI.States.csproj", "{A897B269-34D3-49BF-A16D-418A292D649B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{94C9017C-225C-4E32-820A-890CEF54DF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C9017C-225C-4E32-820A-890CEF54DF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C9017C-225C-4E32-820A-890CEF54DF97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A897B269-34D3-49BF-A16D-418A292D649B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A897B269-34D3-49BF-A16D-418A292D649B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A897B269-34D3-49BF-A16D-418A292D649B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A897B269-34D3-49BF-A16D-418A292D649B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{94C9017C-225C-4E32-820A-890CEF54DF97} = {90BAFABE-E43F-4A00-8FDA-C82FA4E85D31}
+		{A897B269-34D3-49BF-A16D-418A292D649B} = {90BAFABE-E43F-4A00-8FDA-C82FA4E85D31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36867B9D-FB32-4A4F-8918-E05CD294FA0C}
