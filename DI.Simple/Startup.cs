@@ -60,7 +60,7 @@ namespace DI.Simple
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=MyDependency}/{action=Index}/{id?}");
             });
         }
     }
