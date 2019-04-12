@@ -1,0 +1,11 @@
+﻿@using DI.ViewInjection.HtmlHelpers
+@inject CustomHtmlHelper Html
+@{
+    ViewData["Title"] = "Dependency Injection - View Injection : Override services";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    Test: @Html.Value
+</div>

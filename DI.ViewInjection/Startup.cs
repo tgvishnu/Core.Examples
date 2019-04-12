@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DI.ViewInjection.HtmlHelpers;
 using DI.ViewInjection.Infrastructure;
 using DI.ViewInjection.Interfaces;
 using DI.ViewInjection.Models.Services;
@@ -38,6 +39,7 @@ namespace DI.ViewInjection
             services.AddTransient<IToDoItemRepository, ToDoItemRepository>();
             services.AddTransient<StatasticsService>();
             services.AddTransient<ProfileOptionsService>();
+            services.AddTransient<CustomHtmlHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
