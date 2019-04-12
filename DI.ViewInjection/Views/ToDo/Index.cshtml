@@ -4,11 +4,13 @@
 @inject StatasticsService _statsService
 @model IEnumerable<ToDoItem>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Dependency Injection - View Injection : Model service usage";
 }
 
+<h2>@ViewData["Title"]</h2>
+
 <div>
-    <h1>To Do Items</h1>
+    <h2>To Do Items</h2>
     <ul>
         <li>TotalItems : @_statsService.GetCount()</li>
         <li>Completed  : @_statsService.GetCompletedCount()</li>
@@ -20,7 +22,7 @@
             <th>Priority</th>
             <th>Is Done?</th>
         </tr>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>@item.Name</td>

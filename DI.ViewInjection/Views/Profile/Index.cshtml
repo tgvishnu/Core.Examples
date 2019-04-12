@@ -1,0 +1,22 @@
+﻿@using System.Threading.Tasks
+@using DI.ViewInjection.Models
+@using DI.ViewInjection.Models.Services
+@inject ProfileOptionsService _profileServiceOptions
+@model Profile
+@{
+    ViewData["Title"] = "Dependency Injection - View Injection : Populate options";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h2>Update Profile</h2>
+    Name: @Html.TextBoxFor(m => m.Name)
+    <br />
+    Gender: @Html.DropDownList("Gender", _profileServiceOptions.ListGenders().Select(g => new SelectListItem() { Text = g, Value = g }))
+    <br />
+    State: @Html.DropDownListFor(m => m.State.Code, _profileServiceOptions.ListStates().Select(g => new SelectListItem() {  Text = g.Name, Value = g.Code}))
+    <br />
+    Fav. Color: @Html.DropDownListFor(m => m.FavColor, _profileServiceOptions.ListColors().Select(g => new SelectListItem() {  Text = g, Value = g}))
+</div>
+
