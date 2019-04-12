@@ -34,5 +34,11 @@ namespace DI.ConstructorInjection.Controllers
             }
             return View();
         }
+
+        public IActionResult About([FromServices] IDateTime dateTime)
+        {
+            ViewData["Message"] = $"Current server time: {dateTime.Now}";
+            return View();
+        }
     }
 }

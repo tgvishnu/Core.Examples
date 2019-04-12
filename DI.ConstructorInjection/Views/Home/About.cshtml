@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Dependency Injection - Controller Injection : Action Injection";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h1>A Message From The Server</h1>
+<p>
+    @ViewData["Message"]
+</p>
+<br />
+
+@Html.ActionLink("Click For Constructor Injection", "Index", "Home", null)
