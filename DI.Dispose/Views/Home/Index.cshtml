@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Dependency Injection - Dispose";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div>
+    <p>
+        The container calls <code>Dispose</code> for the <code>IDisposable</code> types it creates. If an instance is added to the container by user code, it isn't disposed automatically.
+
+    </p>
+    <br />
+    <p>
+        The container creates the following instances and disposes them automatically:
+        <ul>
+            <li>
+                <code>
+                    services.AddScoped<'Service1'>()
+                </code>
+            </li>
+            <li>
+                <code>
+                    services.AddSingleton<'Service2'>()
+                </code>
+            </li>
+            <li>
+                <code>
+                    services.AddSingleton<'ISomeService'>(sp => new SomeServiceImplementation())
+                </code>
+            </li>
+        </ul>
+    </p>
+    <br />
+    <p>
+        The container doesn't create the following instances, so it doesn't dispose of  the instances automatically
+        <ul>
+            <li>
+                <code>
+                    services.AddSingleton(new Service3());
+                </code>
+            </li>
+            <li>
+                <code>
+                    services.AddSingleton<'Service3'>(new Service3())
+                </code>
+            </li>
+        </ul>
+    </p>
+</div>
