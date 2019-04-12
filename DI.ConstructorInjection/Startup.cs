@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DI.ConstructorInjection.Interfaces;
+using DI.ConstructorInjection.Models;
 using DI.ConstructorInjection.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,7 @@ namespace DI.ConstructorInjection
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Configure<SampleWebSettings>(Configuration);
             services.AddTransient<IDateTime, SystemDateTime>();
         }
 

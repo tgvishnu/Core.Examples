@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Titles"] = "Dependency Injection - Controller Injection : Access Settings from controller using Options pattern";
+}
+
+<h2>@ViewData["Titles"]</h2>
+
+<h2>Configuration Settings</h2>
+<p>
+    Site Title: @ViewData["Title"]
+</p>
+<p>
+    Updates: @ViewData["Updates"]
+</p>
+
+<br />
+
+@Html.ActionLink("Click For Constructor Injection", "Index", "Home", null)
+@Html.ActionLink("Click For Action method Injection", "About", "Home", null)
+

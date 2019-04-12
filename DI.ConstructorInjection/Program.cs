@@ -19,6 +19,10 @@ namespace DI.ConstructorInjection
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.AddJsonFile("samplewebsettings.json", optional: false, reloadOnChange: false);
+                })
                 .UseStartup<Startup>();
     }
 }
