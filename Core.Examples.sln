@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.Simple", "DI.Simple\DI.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.States", "DI.States\DI.States.csproj", "{A897B269-34D3-49BF-A16D-418A292D649B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.ViewInjection", "DI.ViewInjection\DI.ViewInjection.csproj", "{ED37A923-C89B-42B7-9F7F-44519B4F1E85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{A897B269-34D3-49BF-A16D-418A292D649B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A897B269-34D3-49BF-A16D-418A292D649B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A897B269-34D3-49BF-A16D-418A292D649B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED37A923-C89B-42B7-9F7F-44519B4F1E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED37A923-C89B-42B7-9F7F-44519B4F1E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED37A923-C89B-42B7-9F7F-44519B4F1E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED37A923-C89B-42B7-9F7F-44519B4F1E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{94C9017C-225C-4E32-820A-890CEF54DF97} = {90BAFABE-E43F-4A00-8FDA-C82FA4E85D31}
 		{A897B269-34D3-49BF-A16D-418A292D649B} = {90BAFABE-E43F-4A00-8FDA-C82FA4E85D31}
+		{ED37A923-C89B-42B7-9F7F-44519B4F1E85} = {90BAFABE-E43F-4A00-8FDA-C82FA4E85D31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36867B9D-FB32-4A4F-8918-E05CD294FA0C}
