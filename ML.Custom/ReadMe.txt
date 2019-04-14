@@ -1,0 +1,1 @@
+﻿Description: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-2.2
