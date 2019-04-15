@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ML.FactoryBased.Models.Request>
+
+@{
+    ViewData["Title"] = "Middleware Extensibility Sample";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Instructions</h2>"
+        </div>
+        <div class="panel-body">
+            <p>
+                To demonstrate conventional and  <code>IMiddleware</code>
+                middleware activiations, add a <code>key</code> in query
+                stirng parameter to the request with any value.
+            </p>
+            <h3>Examples</h3>
+            <ul>
+                <li><code>http://localhost:5000/?key=value1</code></li>
+                <li><code>http://localhost:5000/?key=value2</code></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Request Information</h2>
+        </div>
+        <div class="panel-body">
+            @if (Model.Count() == 0)
+            {
+                <b>
+                    No requests have been received with a <code>key</code>
+                    query string parameter and value.
+                </b>
+            }
+            else
+            {
+                <b>Previous Requests:</b>
+                <ul>
+                    @foreach (var request in Model)
+                    {
+                        <li>@request.DT UTC: @request.MiddlewareActivation @request.Value</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>
