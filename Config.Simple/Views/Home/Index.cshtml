@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Different Configuration options</h1>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>InMemoryCollectiony</td>
+                <td>@Html.ActionLink("Click here", "FromMemory", "Home")</td>
+            </tr>
+            <tr>
+                <td>JsonFile</td>
+                <td>@Html.ActionLink("Click here", "FromJson", "Home")</td>
+            </tr>
+            <tr>
+                <td>Class Bind : From Json</td>
+                <td>@Html.ActionLink("Click here", "FromJsonToClass", "Home")</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

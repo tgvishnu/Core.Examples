@@ -1,0 +1,65 @@
+﻿@model Config.Simple.Models.ArrayListExample
+@{
+    ViewData["Title"] = "Configuraiton : From Memory";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Bound array</h2>
+            </div>
+            <div class="panel-body">
+                <p>A Memory Configuration Provider loads a dictionary of configuration key-value pairs that contain array data in the <code>Program</code> class:</p>
+                <pre>
+                <code>public static Dictionary&lt;string, string&gt; arrayDict = new Dictionary&lt;string, string&gt;
+                    {
+                        {"array:entries:0", "value0"},
+                        {"array:entries:1", "value1"},
+                        {"array:entries:2", "value2"},
+                        {"array:entries:4", "value4"},
+                        {"array:entries:5", "value5"}
+                    };
+                    </code>
+                </pre>
+
+                <pre><code>config.AddInMemoryCollection(arrayDict);</code></pre>
+                <p>Any missing values can be added, which will bind automatically to array</p>
+                <pre><code>config.AddJsonFile("missing_array.json");</code></pre>
+                <p>An <code>ArrayExample</code> class is avaiable to hold the array data:</p>
+                <pre>
+                <code>public class ArrayExample
+                        {
+                            public string[] Entries { get; set; }
+                        }
+                    </code>
+                </pre>
+                <p>The class is bound to the configuration data held in the <code>array</code> section. The configuration key index values are enumerated by the configuration binder to create array entries in the class.</p>
+                <pre><code>ArrayExample = _config.GetSection("array").Get&lt;ArrayExample&gt;();</code></pre>
+                <p>The bound data is rendered in the output:</p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ArrayExample.Entries Array Index</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(int i=0; i< Model.Entries.Length; i++)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@Model.Entries[i]</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

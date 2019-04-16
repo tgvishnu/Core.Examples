@@ -1,0 +1,89 @@
+﻿@model Config.Simple.Models.JsonArrayExample
+@{
+    ViewData["Title"] = "Configuraiton : From Json file";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Bound array</h2>
+            </div>
+            <div class="panel-body">
+                <p>
+                    There's no direct relationship between the configuration key index values and the array index values.
+                    The configuration keys are enumerated, and the configuration values are loaded into the class instance sequentially.
+                    A null value isn't created by the configuration binder when the configuration data is read and an index isn't present.
+                    In this example, no index &num;3 exists in the configuration data array.
+                    The configuration binder assigns the configuration data for configuration key array index &num;4 to the POCO class array in
+                    <code>Entries</code> at index &num;3.
+                </p>
+
+                <pre>
+                <code>
+                        {
+                            "json_array": {
+                                "key": "valueA",
+                                "subsection": [
+                                    "valueB",
+                                    "valueC",
+                                    "valueD"
+                                ]
+                            }
+                        }
+                    </code>
+                </pre>
+                <p>Configuration loads the contents of this file into key-value pairs.</p>
+                <table class="table table-striped">
+                    <thead><tr><th scope="col">Key</th><th scope="col">Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>json_array:key</td><td>valueA</td></tr>
+                        <tr><td>json_array:subsection:0</td><td>valueB</td></tr>
+                        <tr><td>json_array:subsection:1</td><td>valueC</td></tr>
+                        <tr><td>json_array:subsection:2</td><td>valueD</td></tr>
+                    </tbody>
+                </table>
+                <p>The configuration section, <code>json_array</code>, is bound to a POCO class:</p>
+                <pre>
+                <code>
+                    public class JsonArrayExample
+                    {
+                        public string Key { get; set; }
+                        public string[] Subsection { get; set; }
+                    }
+                    </code>
+                </pre>
+                <pre><code>JsonArrayExample = _config.GetSection("json_array").Get&lt;JsonArrayExample&gt;();</code></pre>
+                <p>The instance can be read and rendered in the output:</p>
+                <p>
+                    <code>JsonArrayExample.Key</code> : @@Model.Key
+                </p>
+                <p>
+                    <code>JsonArrayExample.Key</code> : @Model.Key
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">JsonArrayExample.Subsection Array Index</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Subsection.Length; i++)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@Model.Subsection[i]</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
